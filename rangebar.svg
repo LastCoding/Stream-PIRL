@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100.1mm"
+   height="21.00001mm"
+   viewBox="0 0 100.1 21.00001"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)"
+   sodipodi:docname="bar.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.54236816"
+     inkscape:cx="407.4723"
+     inkscape:cy="141.0481"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="1920"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-99.999979)">
+    <path
+       id="partial_start"
+       style="fill:#00ff48;fill-opacity:1;stroke:none;stroke-width:0.287218"
+       inkscape:label="partial_start"
+       d="M 12.068627,100.56005 C 5.3577062,100.68366 0,105.06839 0,110.5 c 0,5.43161 5.3577062,9.81633 12.068627,9.93995 z" />
+    <path
+       id="partial_end"
+       style="display:inline;fill:#00ff48;fill-opacity:1;stroke:none;stroke-width:0.287218"
+       inkscape:label="partial_end"
+       d="M 88.031373,100.56005 C 94.742314,100.68366 100.1,105.06839 100.1,110.5 c 0,5.43161 -5.357686,9.81633 -12.068627,9.93995 z" />
+    <rect
+       style="fill:#00ff48;fill-opacity:1;stroke:none;stroke-width:0.101615"
+       id="fill"
+       width="80"
+       height="20"
+       x="-90.04998"
+       y="-120.55431"
+       transform="scale(-1)"
+       ry="0"
+       inkscape:label="fill" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1.10865;stroke-dasharray:none"
+       id="border"
+       width="98.86412"
+       height="19.891359"
+       x="-99.48204"
+       y="-120.44566"
+       transform="scale(-1)"
+       ry="9.9456797"
+       inkscape:label="border" />
+  </g>
+</svg>

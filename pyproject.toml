@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "dynamic-overlay"
+version = "0.1.0"
+description = ""
+authors = ["José Ruiz <joseruiz@keemail.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+gspread = "^5.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
