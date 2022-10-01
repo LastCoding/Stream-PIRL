@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 import xml.etree.ElementTree as et
 import re
 import gspread
-
+import time
 service_account = gspread.service_account(filename="./auth.json")
 
 class Parser:
@@ -28,7 +28,10 @@ class SVGUtils:
 
     def set_style_attr(self, element_id, style):
         self.find_element_by_id(element_id).set(
-            "style", ";".join(f"{k}:{v}" for k, v in style.items()))    
+            "style", ";".join(f"{k}:{v}" for k, v in style.items()))
+
+    def __str__(self):
+        return et.tostring(self.__tree.getroot()).decode()
 
 class GraphicsPort(ABC):
     """
@@ -113,11 +116,18 @@ class RangeBar(GraphicsPort):
             case "change_color":
                 self.__change_color(kwargs["color"])
             case "external_data_provider":
-                self.external_data_provider(kwargs["cell"])
+                self.__external_data_provider(kwargs["cell"])
 
 
     def render(self):
-        return et.tostring(self._tree.getroot()).decode()
+        new_width = self.__value - 10
+        new_pos_x = self.__value * -1
+        
+        element = self.__utils.find_element_by_id(self.__main_elements_id["width"])
+        element.set("width", str(new_width))
+        element.set("x", str(new_pos_x))
+
+        return str(self.__utils)
 
 def main():
 
@@ -125,7 +135,14 @@ def main():
     
     svg = Parser.parse_svg("rangebar.svg")
     rb = RangeBar(SVGUtils(svg), google_sheet_data_provider)
-    rb.execute_action("change_color", color="#4287f5")
+    #rb.execute_action("change_color", color="#4287f5")
+    while True:
+        rb.execute_action("external_data_provider", cell="A1")    
+        svg = rb.render()
+        text_file = open("./1.svg", "w")
+        text_file.write(svg)
+        text_file.close()
+        time.sleep(5)
 
 if __name__ == "__main__":
     main()
