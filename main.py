@@ -2,6 +2,9 @@
 from abc import ABC, abstractmethod
 import xml.etree.ElementTree as et
 import re
+import gspread
+
+service_account = gspread.service_account(filename="./auth.json")
 
 class Parser:
     @staticmethod
@@ -43,38 +46,49 @@ class GraphicsPort(ABC):
         pass
 
 
-class DataPort(ABC):
+class ExternalDataProviderPort(ABC):
     """
     Interface for data retrieval from third party services such as
     - Google Sheets
     - Twitch Chat
     - Google word
     """
-    @abstractmethod
-    def execute_action(self, action, **kwargs):
+    def get_data(data):
         pass
 
 
-class GoogleExcelDataAdapter(DataPort):
-    pass
+class GoogleSheetDataProviderAdapter(ExternalDataProviderPort):
+    def __init__(self, google_service_account, sheet_name):
+        self.google_service_account = google_service_account
+        self.sheet = self.google_service_account.open("DynamicOverlays")
+        self.work_sheet = self.sheet.worksheet(sheet_name)
+
+    def get_data(self, data):
+        return self.work_sheet.acell(data).value
+
 
 class RangeBar(GraphicsPort):
     __value = 0
+    __external_data_adapter = None
     __utils: SVGUtils = None
     __main_elements_id = {
         "color": "fill",
         "width": "fill"
     }
-    valid_actions = ["increment", "decrement", "change_color"]
+    valid_actions = ["external_data_provider", "increment", "decrement", "change_color"]
 
-    def __init__(self, utils: SVGUtils):
+    def __init__(self, utils: SVGUtils, external_data_port: ExternalDataProviderPort):
         self.__utils = utils
+        self.__external_data_adapter = external_data_port
     
     def __increment(self, value):
         self.__value += abs(value)
 
     def __decrement(self, value):
         self.__value -= abs(value)
+
+    def __external_data_provider(self, cell):
+        self.__value = int(self.__external_data_adapter.get_data(cell))
 
     def __change_color(self, color):
         is_valid = re.match(r'^#([a-f0-9]{6})$', color.lower())
@@ -98,13 +112,19 @@ class RangeBar(GraphicsPort):
                 self.__decrement(kwargs["number"])
             case "change_color":
                 self.__change_color(kwargs["color"])
+            case "external_data_provider":
+                self.external_data_provider(kwargs["cell"])
+
 
     def render(self):
         return et.tostring(self._tree.getroot()).decode()
 
 def main():
+
+    google_sheet_data_provider = GoogleSheetDataProviderAdapter(service_account, "Hoja1")
+    
     svg = Parser.parse_svg("rangebar.svg")
-    rb = RangeBar(SVGUtils(svg))
+    rb = RangeBar(SVGUtils(svg), google_sheet_data_provider)
     rb.execute_action("change_color", color="#4287f5")
 
 if __name__ == "__main__":
