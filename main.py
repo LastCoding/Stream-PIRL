@@ -16,7 +16,7 @@ class SVGUtils:
         self.__tree = tree
         self.__root = self.__tree.getroot()
 
-    def find_element_by_id(self, element_id):
+    def find_element_by_id(self, element_id):        
         return self.__root.findall(f'.//*[@id="{element_id}"]')[0]
 
     def element_attr_to_dict(self, element_id, attr):
@@ -80,9 +80,9 @@ class RangeBar(GraphicsPort):
         is_valid = re.match(r'^#([a-f0-9]{6})$', color.lower())
         if is_valid:
             element = self.__utils.find_element_by_id(self.__main_elements_id["color"])
-            style = self.__utils.element_attr_to_dict(element, "style")
+            style = self.__utils.element_attr_to_dict(self.__main_elements_id["color"], "style")
             style["fill"] = color
-            self.__utils.set_style_attr(element, style)
+            self.__utils.set_style_attr(self.__main_elements_id["color"], style)
 
         else:
             raise Exception("Invalid color code.")
