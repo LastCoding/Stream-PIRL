@@ -1,0 +1,10 @@
+<svg xmlns:ns0="http://www.inkscape.org/namespaces/inkscape" xmlns:ns1="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" width="100.1mm" height="21.00001mm" viewBox="0 0 100.1 21.00001" version="1.1" id="svg5" ns0:version="1.2.1 (9c6d41e410, 2022-07-14, custom)" ns1:docname="bar.svg">
+  <ns1:namedview id="namedview7" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" ns0:showpageshadow="2" ns0:pageopacity="0.0" ns0:pagecheckerboard="0" ns0:deskcolor="#d1d1d1" ns0:document-units="mm" showgrid="false" ns0:zoom="0.54236816" ns0:cx="407.4723" ns0:cy="141.0481" ns0:window-width="1920" ns0:window-height="1011" ns0:window-x="1920" ns0:window-y="32" ns0:window-maximized="1" ns0:current-layer="layer1" />
+  <defs id="defs2" />
+  <g ns0:label="Capa 1" ns0:groupmode="layer" id="layer1" transform="translate(0,-99.999979)">
+    <path id="partial_start" style="fill:#fc0303;fill-opacity:1.625;stroke:none;stroke-width:0.287218" ns0:label="partial_start" d="M 12.068627,100.56005 C 5.3577062,100.68366 0,105.06839 0,110.5 c 0,5.43161 5.3577062,9.81633 12.068627,9.93995 z" />
+    <path id="partial_end" style="display:inline;fill:#fc0303;fill-opacity:0;stroke:none;stroke-width:0.287218" ns0:label="partial_end" d="M 88.031373,100.56005 C 94.742314,100.68366 100.1,105.06839 100.1,110.5 c 0,5.43161 -5.357686,9.81633 -12.068627,9.93995 z" />
+    <rect style="fill:#00ff48;fill-opacity:1;stroke:none;stroke-width:0.101615" id="fill" width="73.1" height="20" x="-83.1" y="-120.55431" transform="scale(-1)" ry="0" ns0:label="fill" />
+    <rect style="fill:none;stroke:#000000;stroke-width:1.10865;stroke-dasharray:none" id="border" width="98.86412" height="19.891359" x="-99.48204" y="-120.44566" transform="scale(-1)" ry="9.9456797" ns0:label="border" />
+  </g>
+</svg>

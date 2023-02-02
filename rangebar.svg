@@ -40,12 +40,12 @@
      transform="translate(0,-99.999979)">
     <path
        id="partial_start"
-       style="fill:#00ff48;fill-opacity:1;stroke:none;stroke-width:0.287218"
+       style="fill:#fc0303;fill-opacity:1;stroke:none;stroke-width:0.287218"
        inkscape:label="partial_start"
        d="M 12.068627,100.56005 C 5.3577062,100.68366 0,105.06839 0,110.5 c 0,5.43161 5.3577062,9.81633 12.068627,9.93995 z" />
     <path
        id="partial_end"
-       style="display:inline;fill:#00ff48;fill-opacity:1;stroke:none;stroke-width:0.287218"
+       style="display:inline;fill:#fc0303;fill-opacity:1;stroke:none;stroke-width:0.287218"
        inkscape:label="partial_end"
        d="M 88.031373,100.56005 C 94.742314,100.68366 100.1,105.06839 100.1,110.5 c 0,5.43161 -5.357686,9.81633 -12.068627,9.93995 z" />
     <rect
